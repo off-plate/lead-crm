@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lead CRM</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Lead CRM</h1>
+  <div class="filters">
+    <input id="search" type="search" placeholder="Hledat (jméno, adresa, kategorie)…" />
+    <select id="statusFilter">
+      <option value="">— všechny statusy —</option>
+      <option value="new">New</option>
+      <option value="to_contact">To contact</option>
+      <option value="contacted">Contacted</option>
+      <option value="replied">Replied</option>
+      <option value="meeting">Meeting</option>
+      <option value="proposal">Proposal</option>
+      <option value="won">Won</option>
+      <option value="lost">Lost</option>
+      <option value="not_interested">Not interested</option>
+    </select>
+    <label class="toggle"><input type="checkbox" id="hideExternal" /> Skrýt ty s externí webovkou</label>
+    <span id="count" class="count"></span>
+  </div>
+</header>
+
+<main>
+  <table id="leads">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Jméno</th>
+        <th>Kategorie</th>
+        <th>Adresa</th>
+        <th>Telefon</th>
+        <th>Recenze</th>
+        <th>Web (search)</th>
+        <th>Maps</th>
+        <th>Poznámky</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
