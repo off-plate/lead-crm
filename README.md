@@ -21,7 +21,7 @@ Re-running keeps existing `status` and `notes` intact — only refreshes facts.
 ## Local preview of the UI
 
 ```bash
-cd web && python3 -m http.server 5173
+cd docs && python3 -m http.server 5173
 ```
 
 Then open http://localhost:5173
