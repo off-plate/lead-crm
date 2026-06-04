@@ -290,9 +290,14 @@ function openDrawer(l) {
 
   const body = document.createElement('div');
   body.className = 'drawer-body';
+  const websiteUrl = l.website || l.external_website_search;
   body.innerHTML = `
     <div class="section-title">Status</div>
     <div class="status-options" id="drawerStatuses"></div>
+
+    ${l.what ? `<div class="section-title">Co dělají</div><div style="font-size:13.5px;line-height:1.55;color:var(--text-2)">${esc(l.what)}</div>` : ''}
+    ${l.why_fit ? `<div class="section-title">Proč Off-Plate</div><div style="font-size:13.5px;line-height:1.55;color:var(--text-2)">${esc(l.why_fit)}</div>` : ''}
+    ${l.hook ? `<div class="section-title">Hook</div><div style="font-size:13.5px;line-height:1.55;color:var(--text);background:var(--primary-soft);padding:10px 12px;border-radius:9px;border-left:3px solid var(--primary)">${esc(l.hook)}</div>` : ''}
 
     <div class="section-title">Detaily</div>
     <div class="kv-grid">
@@ -302,7 +307,7 @@ function openDrawer(l) {
       <div class="k">Telefon</div><div class="v">${l.phone ? `<a class="link" href="tel:${esc(l.phone)}">${esc(l.phone)}</a>` : '—'}</div>
       <div class="k">Recenze</div><div class="v">${esc(l.latest_review_text) || '—'}</div>
       <div class="k">Maps</div><div class="v">${l.maps_url ? `<a class="link" target="_blank" rel="noopener" href="${esc(l.maps_url)}">Otevřít v Google Maps</a>` : '—'}</div>
-      <div class="k">Externí web</div><div class="v">${l.external_website_search ? `<a class="link" target="_blank" rel="noopener" href="${esc(l.external_website_search)}">${esc(hostnameOf(l.external_website_search))}</a>` : '<span style="color:var(--text-3)">žádný</span>'}</div>
+      <div class="k">Web</div><div class="v">${websiteUrl ? `<a class="link" target="_blank" rel="noopener" href="${esc(websiteUrl)}">${esc(hostnameOf(websiteUrl))}</a>${!l.website && l.external_website_search ? ' <span style="color:var(--text-3);font-size:11px">(ne v profilu, nalezeno hledáním)</span>' : ''}` : '<span style="color:var(--text-3)">žádný</span>'}</div>
       <div class="k">Nalezeno přes</div><div class="v" style="color:var(--text-3)">${esc(l.found_via_query) || '—'}</div>
     </div>
 

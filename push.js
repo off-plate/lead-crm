@@ -36,10 +36,14 @@ for (const f of files) {
       address: r.address || null,
       phone: r.phone || null,
       maps_url: r.url || r.maps_url || null,
+      website: r.website || null,
       latest_review_text: r.latest_review_text || null,
       latest_review_months_ago: r.latest_review_months_ago ?? null,
       external_website_search: r.external_website_search || null,
       found_via_query: r.found_via || null,
+      what: r.what || null,
+      why_fit: r.why_fit || null,
+      hook: r.hook || null,
     });
   }
 }
